@@ -27,4 +27,8 @@
     </EmbeddedResource>
   </ItemGroup>
 
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="md &quot;$(SolutionDir)InstallScripts&quot;&#xD;&#xA;md &quot;$(SolutionDir)InstallScripts\Release&quot;&#xD;&#xA;md &quot;$(SolutionDir)InstallScripts\Installers&quot;&#xD;&#xA;xcopy /q /y &quot;$(ProjectDir)$(OutDir)*.dll&quot; &quot;$(SolutionDir)InstallScripts\Release&quot;&#xD;&#xA;xcopy /q /y &quot;$(ProjectDir)$(OutDir)*.exe&quot; &quot;$(SolutionDir)InstallScripts\Release&quot;" />
+  </Target>
+
 </Project>

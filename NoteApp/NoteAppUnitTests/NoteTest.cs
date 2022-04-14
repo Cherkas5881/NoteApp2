@@ -13,12 +13,12 @@ namespace NoteAppUnitTests
         /// <summary>
         /// Переменная, хранящая время создания заметки
         /// </summary>
-        private readonly DateTime _createdTime = new DateTime(2021, 04, 18, 17, 00, 00);
+        private readonly DateTime _createdTime = new DateTime(2022, 04, 10, 17, 00, 00);
 
         /// <summary>
         /// Переменная, хранящая время изменения заметки
         /// </summary>
-        private readonly DateTime _changedTime = new DateTime(2021, 04, 18, 17, 05, 00);
+        private readonly DateTime _changedTime = new DateTime(2022, 04, 10, 17, 05, 00);
 
         /// <summary>
         /// Метод, выполняющийся каждый раз перед запуском теста
@@ -26,14 +26,12 @@ namespace NoteAppUnitTests
         /// </summary>
         public Note GetSourceNote()
         {
-            var sourceNote = new Note
-            {
-                Title = "Здесь должен быть текст",
-                Category = NoteCategory.Home,
-                Text = "Название заметки",
-                IsCreated = _createdTime,
-                IsChanged = _changedTime
-            };
+            var sourceNote = new Note();
+            sourceNote.Title = "Здесь должен быть текст";
+            sourceNote.Category = NoteCategory.Home;
+            sourceNote.Text = "Название заметки";
+            sourceNote.IsCreated = _createdTime;
+            sourceNote.IsChanged = _changedTime;
 
             return sourceNote;
         }
